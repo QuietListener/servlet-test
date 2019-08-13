@@ -44,4 +44,25 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>ListenerServlet</servlet-name>
+        <servlet-class>andy.com.demo.listener.ListenerServlet</servlet-class>
+        <load-on-startup>20</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ListenerServlet</servlet-name>
+        <url-pattern>/listenerServlet</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>testInitContextParams</param-name>
+        <param-value>testInitContextParams1</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>andy.com.demo.listener.ServletContextListenerImpl</listener-class>
+    </listener>
+
+
 </web-app>
