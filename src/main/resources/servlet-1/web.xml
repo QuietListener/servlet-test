@@ -72,7 +72,7 @@
     <filter>
         <filter-name>LoggingFilter</filter-name>
         <filter-class>andy.com.demo.filter.LoggingFilter</filter-class>
-        
+        <async-supported>true</async-supported>
         <init-param>
             <param-name>logFileName</param-name>
             <param-value>log.log</param-value>
@@ -91,9 +91,24 @@
     </filter-mapping>
     
 
-    <!--??????-->
+    <!--?????? ????-->
     <welcome-file-list>
         <welcome-file>dispacher</welcome-file>
     </welcome-file-list>
+
+
+    <!--async -->
+    <servlet>
+        <servlet-name>Async</servlet-name>
+        <servlet-class>andy.com.demo.async.AsyncServlet</servlet-class>
+        <!-- ???? -->
+        <async-supported>true</async-supported>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Async</servlet-name>
+        <url-pattern>/async</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
