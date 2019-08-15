@@ -91,4 +91,9 @@
     </filter-mapping>
     
 
+    <!--??????-->
+    <welcome-file-list>
+        <welcome-file>dispacher</welcome-file>
+    </welcome-file-list>
+
 </web-app>
