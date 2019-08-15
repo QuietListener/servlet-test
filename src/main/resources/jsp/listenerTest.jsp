@@ -11,6 +11,5 @@ initByContextListener = <%=application.getAttribute("initByContextListener")%>
 <br>
 testInitContextParams = <%=application.getInitParameter("testInitContextParams")%>
 
-
 </body>
 </html>

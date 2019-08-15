@@ -32,6 +32,7 @@
 
 
 
+    <!-- Dispatcher test forward jsp-->
     <servlet>
         <servlet-name>SimpleDispacher</servlet-name>
         <servlet-class>andy.com.demo.httpservlet.SimpleServletDispatcher</servlet-class>
@@ -44,6 +45,7 @@
     </servlet-mapping>
 
 
+    <!-- ServletContext Listener-->
     <servlet>
         <servlet-name>ListenerServlet</servlet-name>
         <servlet-class>andy.com.demo.listener.ListenerServlet</servlet-class>
@@ -55,6 +57,8 @@
         <url-pattern>/listenerServlet</url-pattern>
     </servlet-mapping>
 
+
+
     <context-param>
         <param-name>testInitContextParams</param-name>
         <param-value>testInitContextParams1</param-value>
@@ -64,5 +68,27 @@
         <listener-class>andy.com.demo.listener.ServletContextListenerImpl</listener-class>
     </listener>
 
+    <!-- filter -->
+    <filter>
+        <filter-name>LoggingFilter</filter-name>
+        <filter-class>andy.com.demo.filter.LoggingFilter</filter-class>
+        
+        <init-param>
+            <param-name>logFileName</param-name>
+            <param-value>log.log</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>prefix</param-name>
+            <param-value>URI:</param-value>
+        </init-param>
+    </filter>
+    
+    
+    <filter-mapping>
+        <filter-name>LoggingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
 
 </web-app>
